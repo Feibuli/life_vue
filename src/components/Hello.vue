@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1 @click="change">{{ msg }}</h1>
+    <h1 @click="change">{{ info }}</h1>
+    <input type="text" v-model="info">
   </div>
 </template>
 
@@ -10,47 +11,49 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: '更改前'
+      info: 'vue'
     }
   },
   methods: {
     change () {
-      this.msg = '更改后'
+      this.info = 'vue2'
     }
   },
   beforeCreate: function () {
-    console.log('beforeCreate========')
-    console.log(this.data)
+    console.log('beforeCreate========>')
+    console.log(this.info)
     console.log(this.$el)
   },
   created: function () {
-    console.log('created========')
+    console.log('created========>')
     console.log(this.info)
     console.log(this.$el)
   },
   beforeMount: function () {
-    console.log('beforeMount========')
+    console.log('beforeMount========>')
     console.log(this.info)
     console.log(this.$el)
   },
   mounted: function () {
-    console.log('mounted========')
+    console.log('mounted========>')
     console.log(this.info)
     console.log(this.$el)
   },
   beforeUpdate: function () {
-    console.log('beforeUpdate========')
+    console.log('beforeUpdate========>')
+    console.log(this.info)
   },
   updated: function () {
-    console.log('updated========')
+    console.log('updated========>')
+    console.log(this.info)
   },
   beforeDestroy: function () {
-    console.log('beforeDestroy========')
+    console.log('beforeDestroy========>')
     console.log(this.info)
     console.log(this.$el)
   },
   destroyed: function () {
-    console.log('destroyed========')
+    console.log('destroyed========>')
     console.log(this.info)
     console.log(this.$el)
   }
